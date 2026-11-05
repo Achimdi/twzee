@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-NG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Twzee Foods | Parfaits, Salads, Shawarma and Small Chops</title>
+<meta name="description" content="Greek yoghurt parfaits, ROC granola, shawarma, salads, small chops and custom food trays. See the menu and order on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Twzee Foods: One bite &amp; you're hooked.">
+<meta property="og:description" content="Parfaits, salads, shawarma and small chops. Order on WhatsApp.">
+<!-- After going live, change og:image to the full https:// address of the image -->
+<meta property="og:image" content="assets/images/HERO_PAGE.jpeg">
+<meta name="theme-color" content="#9E1B44">
+<!-- LOGO: header and footer wordmark use assets/logo.svg. Replace that one file. FAVICON: favicon.svg + favicon.ico + PNGs at the site root, source in assets/favicon-source.svg (regenerate from the real logo later). -->
+<link rel="icon" href="favicon.svg?v=4" type="image/svg+xml">
+<link rel="icon" href="favicon.ico?v=4" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
+<link rel="manifest" href="site.webmanifest?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..800,100;1,9..144,500..800,100&display=swap">
+<script>
+/* SETUP CHECK: shows a note on the page only if a file is missing, out of date or stops with an error. Safe to delete once the site works. */
+(function(){var n=[];function show(){if(!n.length||!document.body)return;var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;z-index:9999;left:12px;right:12px;top:76px;padding:14px 18px;background:#fff;border:3px solid #c0392b;border-radius:14px;font:15px/1.45 system-ui,sans-serif;color:#2B1418;box-shadow:0 8px 30px rgba(0,0,0,.3)";d.innerHTML="<b>Twzee Foods setup check</b><br>"+n.join("<br>");document.body.appendChild(d)}
+window.addEventListener("error",function(e){if(e.target&&e.target!==window){var u=e.target.src||e.target.href||"";if(u.indexOf("fonts.g")<0)n.push("Could not load: "+u.split("/").slice(-2).join("/"))}else n.push("Script error: "+e.message+" ("+String(e.filename||"").split("/").pop()+":"+e.lineno+")")},true);
+window.addEventListener("load",function(){setTimeout(function(){
+if(window.TWZEE_DATA!==4)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_JS!==4)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
+if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="4")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
+show()},400)})})();
+</script>
+<link rel="stylesheet" href="css/styles.css?v=4">
+<!-- PHONE / INSTAGRAM: update here too if they change (and in js/menu-data.js) -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Twzee Foods","telephone":"+2349132155228","sameAs":["https://www.instagram.com/twzee_foods/"],"servesCuisine":"Healthy food","slogan":"One bite & you're hooked."}</script>
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="Twzee Foods, home"><img src="assets/logo.svg" alt="Twzee Foods" width="176" height="44"></a>
+  <nav id="nav" aria-label="Main"><a href="#menu">Menu</a><a href="#how">How to order</a><a href="#contact">Contact</a><a class="btn nav-wa" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener">Order on WhatsApp</a></nav>
+  <a class="btn sm" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><span><span class="xs">Order on </span>WhatsApp</span></a>
+  <button type="button" class="mt" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+ </div>
+</header>
+<main id="top">
+<section class="hero" data-bg="#FFF8F1">
+ <div class="wrap">
+  <div>
+   <p class="eyebrow">Parfaits · Salads · Shawarma · Small chops</p>
+   <h1>Healthy tastes <em>better</em> here.</h1>
+   <p class="sub">Pick what you like from the menu, send your order on WhatsApp, and we sort out delivery with you.</p>
+   <div class="btns"><a class="btn" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener">Order on WhatsApp</a><a class="btn ghost" href="#menu">See the menu</a></div>
+  </div>
+  <div class="hv"><figure class="vid">
+   <video id="vid" muted autoplay loop playsinline preload="metadata" poster="assets/images/HERO_PAGE.jpeg" aria-label="Twzee Foods video: granola being baked and poured, chicken prep and a loaf being enjoyed">
+    <source src="assets/video/intro.mp4" type="video/mp4">
+   </video>
+   <button type="button" class="bigplay" aria-label="Play video"></button>
+   <div class="vc"><button type="button" id="pp" aria-label="Pause video">Pause</button><button type="button" id="snd" aria-pressed="false" aria-label="Turn sound on">Sound off</button></div>
+  </figure><div class="sticker" aria-hidden="true">One bite &amp; you're hooked.</div></div>
+ </div>
+</section>
+<div class="strip"><ul class="wrap"><li>Fresh ingredients</li><li>Delivery on request</li><li>Proudly Nigerian</li></ul></div>
+<div class="layers" role="presentation"></div>
+
+<div id="menu">
+ <nav class="chips" id="chips" aria-label="Menu categories"><a href="#parfait" style="--d:#E8A0B4">Parfait</a><a href="#yoghurt" style="--d:#C9C2A8">Greek Yoghurt</a><a href="#granola" style="--d:#E3A52B">Granola</a><a href="#shawarma" style="--d:#D9825B">Shawarma &amp; Bites</a><a href="#drinks" style="--d:#F2A33A">Drinks</a><a href="#salads" style="--d:#2F7D4F">Salads</a><a href="#chops" style="--d:#C99B66">Small Chops</a><a href="#trays" style="--d:#9E1B44">Food Trays</a></nav>
+ <!-- Menu sections are rendered from js/menu-data.js -->
+</div>
+
+
+<section class="trays" id="trays" data-bg="#9E1B44">
+ <div class="wrap">
+  <div class="in">
+   <h2>Food trays, made your way</h2>
+   <p class="price" id="tray-price">₦60,000</p>
+   <p>Tell us what you'd like on your tray and we'll customise it for you.</p>
+   <a class="btn light" id="tray-btn" href="https://wa.me/2349132155228?text=Hello%20Twzee%20Foods!%20I'd%20like%20to%20order%20the%20%E2%82%A660%2C000%20food%20tray.%20This%20is%20what%20I'd%20like%20in%20it%3A" target="_blank" rel="noopener">Customise on WhatsApp</a>
+  </div>
+  <div class="ph tall"><img src="assets/images/FOOD_TRAY.jpeg" alt="A food tray packed with small chops, jollof rice, fried rice, spaghetti, waffles and fried chicken" style="object-position:50% 45%" loading="lazy"></div>
+ </div>
+</section>
+
+<section class="how" id="how" data-bg="#FFF8F1">
+ <div class="wrap">
+  <h2>How to order</h2>
+  <ol class="steps">
+   <li><h3>Pick your items</h3><p>Add what you like from the menu. Your order builds up at the bottom of the screen.</p></li>
+   <li><h3>Send your order on WhatsApp</h3><p>One tap opens WhatsApp with your order already written out.</p></li>
+   <li><h3>Confirm delivery with us</h3><p>We confirm availability, the final amount and delivery with you on WhatsApp.</p></li>
+  </ol>
+ </div>
+</section>
+</main>
+
+<footer id="contact" data-bg="#F6EBDD">
+ <div class="wrap">
+  <p class="tag">One bite &amp; you're hooked.</p>
+  <div class="btns"><a class="btn" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener">Instagram @twzee_foods</a></div>
+  <small>© 2026 Twzee Foods</small>
+ </div>
+ <div class="layers" role="presentation"></div>
+ <!-- Giant wordmark: uses assets/logo.svg, so the real logo replaces it automatically -->
+ <div class="giant" aria-hidden="true"><img src="assets/logo.svg" alt="" loading="lazy"></div>
+</footer>
+
+<a class="btn fab" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+<button type="button" class="bar" id="bar" hidden></button>
+<dialog id="dlg" aria-labelledby="dt">
+ <div class="dh"><h2 id="dt">Your order</h2><button type="button" id="close" class="btn ghost sm">Close</button></div>
+ <ul id="list"></ul>
+ <p class="tot">Estimated total <strong id="tot"></strong></p>
+ <p class="note">The final amount is confirmed with you on WhatsApp.</p>
+ <a class="btn" id="send" href="#" target="_blank" rel="noopener">Send order on WhatsApp</a>
+</dialog>
+<script src="js/menu-data.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
+</body>
+</html>
