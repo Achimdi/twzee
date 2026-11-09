@@ -12,11 +12,11 @@
 <meta property="og:image" content="assets/images/HERO_PAGE.jpeg">
 <meta name="theme-color" content="#0A7F0D">
 <!-- LOGO: the header uses assets/logo-mark.png and the footer uses assets/logo.png (both made from assets/logo-source.png). FAVICON: favicon.ico, favicon-16.png, favicon-32.png and the other icon files at the site root were made from the same logo. -->
-<link rel="icon" href="favicon.ico?v=6" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=6">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=6">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=6">
-<link rel="manifest" href="site.webmanifest?v=6">
+<link rel="icon" href="favicon.ico?v=7" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=7">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=7">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=7">
+<link rel="manifest" href="site.webmanifest?v=7">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..800,100;1,9..144,500..800,100&display=swap">
 <script>
@@ -26,10 +26,10 @@ window.addEventListener("error",function(e){if(e.target&&e.target!==window){var 
 window.addEventListener("load",function(){setTimeout(function(){
 if(window.TWZEE_DATA!==5)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
 if(window.TWZEE_JS!==5)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
-if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="6")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
+if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="7")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
 show()},400)})})();
 </script>
-<link rel="stylesheet" href="css/styles.css?v=6">
+<link rel="stylesheet" href="css/styles.css?v=7">
 <!-- PHONE / INSTAGRAM: update here too if they change (and in js/menu-data.js) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Twzee Foods","telephone":"+2349132155228","sameAs":["https://www.instagram.com/twzee_foods/"],"servesCuisine":"Healthy food","slogan":"One bite & you're hooked."}</script>
 </head>
@@ -116,7 +116,8 @@ show()},400)})})();
 <a class="btn fab" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
 <button type="button" class="bar" id="bar" hidden></button>
 <dialog id="dlg" aria-labelledby="dt">
- <div class="dh"><h2 id="dt">Your order</h2><button type="button" id="close" class="btn ghost sm">Close</button></div>
+<div class="dbody">
+ <div class="dh"><h2 id="dt">Your order</h2><button type="button" id="close" class="btn ghost sm" autofocus>Close</button></div>
  <ul id="list"></ul>
  <fieldset class="fulfil"><legend>How would you like your order?</legend>
   <label class="opt"><input type="radio" name="fulfil" value="delivery" checked><span><b>Delivery</b><small id="d-note">₦1,500 flat, within town</small></span></label>
@@ -126,6 +127,7 @@ show()},400)})})();
  <dl class="sum"><div><dt>Subtotal</dt><dd id="sub"></dd></div><div><dt>Delivery</dt><dd id="dfee"></dd></div><div class="t"><dt>Estimated total</dt><dd id="tot"></dd></div></dl>
  <p class="note">The final amount is confirmed with you on WhatsApp.</p>
  <a class="btn" id="send" href="#" target="_blank" rel="noopener">Send order on WhatsApp</a>
+</div>
 </dialog>
 <script src="js/menu-data.js?v=5"></script>
 <script src="js/main.js?v=5"></script>
