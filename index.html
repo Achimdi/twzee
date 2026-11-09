@@ -10,39 +10,40 @@
 <meta property="og:description" content="Parfaits, salads, shawarma and small chops. Order on WhatsApp.">
 <!-- After going live, change og:image to the full https:// address of the image -->
 <meta property="og:image" content="assets/images/HERO_PAGE.jpeg">
-<meta name="theme-color" content="#9E1B44">
-<!-- LOGO: header and footer wordmark use assets/logo.svg. Replace that one file. FAVICON: favicon.svg + favicon.ico + PNGs at the site root, source in assets/favicon-source.svg (regenerate from the real logo later). -->
-<link rel="icon" href="favicon.svg?v=4" type="image/svg+xml">
-<link rel="icon" href="favicon.ico?v=4" sizes="48x48">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
-<link rel="manifest" href="site.webmanifest?v=4">
+<meta name="theme-color" content="#0A7F0D">
+<!-- LOGO: the header uses assets/logo-mark.png and the footer uses assets/logo.png (both made from assets/logo-source.png). FAVICON: favicon.ico, favicon-16.png, favicon-32.png and the other icon files at the site root were made from the same logo. -->
+<link rel="icon" href="favicon.ico?v=6" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=6">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=6">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=6">
+<link rel="manifest" href="site.webmanifest?v=6">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..800,100;1,9..144,500..800,100&display=swap">
 <script>
 /* SETUP CHECK: shows a note on the page only if a file is missing, out of date or stops with an error. Safe to delete once the site works. */
-(function(){var n=[];function show(){if(!n.length||!document.body)return;var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;z-index:9999;left:12px;right:12px;top:76px;padding:14px 18px;background:#fff;border:3px solid #c0392b;border-radius:14px;font:15px/1.45 system-ui,sans-serif;color:#2B1418;box-shadow:0 8px 30px rgba(0,0,0,.3)";d.innerHTML="<b>Twzee Foods setup check</b><br>"+n.join("<br>");document.body.appendChild(d)}
+(function(){var n=[];function show(){if(!n.length||!document.body)return;var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;z-index:9999;left:12px;right:12px;top:76px;padding:14px 18px;background:#fff;border:3px solid #FF7900;border-radius:14px;font:15px/1.45 system-ui,sans-serif;color:#0B3D0E;box-shadow:0 8px 30px rgba(0,0,0,.3)";d.innerHTML="<b>Twzee Foods setup check</b><br>"+n.join("<br>");document.body.appendChild(d)}
 window.addEventListener("error",function(e){if(e.target&&e.target!==window){var u=e.target.src||e.target.href||"";if(u.indexOf("fonts.g")<0)n.push("Could not load: "+u.split("/").slice(-2).join("/"))}else n.push("Script error: "+e.message+" ("+String(e.filename||"").split("/").pop()+":"+e.lineno+")")},true);
 window.addEventListener("load",function(){setTimeout(function(){
-if(window.TWZEE_DATA!==4)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
-if(window.TWZEE_JS!==4)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
-if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="4")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_DATA!==5)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_JS!==5)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
+if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="6")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
 show()},400)})})();
 </script>
-<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=6">
 <!-- PHONE / INSTAGRAM: update here too if they change (and in js/menu-data.js) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Twzee Foods","telephone":"+2349132155228","sameAs":["https://www.instagram.com/twzee_foods/"],"servesCuisine":"Healthy food","slogan":"One bite & you're hooked."}</script>
 </head>
 <body>
 <header class="top">
  <div class="wrap">
-  <a class="logo" href="#top" aria-label="Twzee Foods, home"><img src="assets/logo.svg" alt="Twzee Foods" width="176" height="44"></a>
+  <a class="logo" href="#top" aria-label="Twzee Foods, home"><img src="assets/logo-mark.png" alt="Twzee Foods" width="560" height="475"></a>
   <nav id="nav" aria-label="Main"><a href="#menu">Menu</a><a href="#how">How to order</a><a href="#contact">Contact</a><a class="btn nav-wa" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener">Order on WhatsApp</a></nav>
   <a class="btn sm" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><span><span class="xs">Order on </span>WhatsApp</span></a>
   <button type="button" class="mt" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
  </div>
 </header>
 <main id="top">
-<section class="hero" data-bg="#FFF8F1">
+<section class="hero">
  <div class="wrap">
   <div>
    <p class="eyebrow">Parfaits · Salads · Shawarma · Small chops</p>
@@ -59,28 +60,39 @@ show()},400)})})();
   </figure><div class="sticker" aria-hidden="true">One bite &amp; you're hooked.</div></div>
  </div>
 </section>
-<div class="strip"><ul class="wrap"><li>Fresh ingredients</li><li>Delivery on request</li><li>Proudly Nigerian</li></ul></div>
+<div class="strip"><ul class="wrap"><li>Fresh ingredients</li><li>Flat <span data-money="fee">₦1,500</span> delivery within town</li><li>Free delivery from <span data-money="freeOver">₦25,000</span></li><li>Proudly Nigerian</li></ul></div>
 <div class="layers" role="presentation"></div>
 
 <div id="menu">
- <nav class="chips" id="chips" aria-label="Menu categories"><a href="#parfait" style="--d:#E8A0B4">Parfait</a><a href="#yoghurt" style="--d:#C9C2A8">Greek Yoghurt</a><a href="#granola" style="--d:#E3A52B">Granola</a><a href="#shawarma" style="--d:#D9825B">Shawarma &amp; Bites</a><a href="#drinks" style="--d:#F2A33A">Drinks</a><a href="#salads" style="--d:#2F7D4F">Salads</a><a href="#chops" style="--d:#C99B66">Small Chops</a><a href="#trays" style="--d:#9E1B44">Food Trays</a></nav>
+ <nav class="chips" id="chips" aria-label="Menu categories"><a href="#parfait">Parfait</a><a href="#yoghurt">Greek Yoghurt</a><a href="#granola">Granola</a><a href="#shawarma">Shawarma &amp; Bites</a><a href="#drinks">Drinks</a><a href="#salads">Salads</a><a href="#chops">Small Chops</a><a href="#trays">Food Trays</a></nav>
  <!-- Menu sections are rendered from js/menu-data.js -->
 </div>
 
 
-<section class="trays" id="trays" data-bg="#9E1B44">
+<section class="trays" id="trays">
  <div class="wrap">
   <div class="in">
    <h2>Food trays, made your way</h2>
    <p class="price" id="tray-price">₦60,000</p>
    <p>Tell us what you'd like on your tray and we'll customise it for you.</p>
-   <a class="btn light" id="tray-btn" href="https://wa.me/2349132155228?text=Hello%20Twzee%20Foods!%20I'd%20like%20to%20order%20the%20%E2%82%A660%2C000%20food%20tray.%20This%20is%20what%20I'd%20like%20in%20it%3A" target="_blank" rel="noopener">Customise on WhatsApp</a>
+   <a class="btn or" id="tray-btn" href="https://wa.me/2349132155228?text=Hello%20Twzee%20Foods!%20I'd%20like%20to%20order%20the%20%E2%82%A660%2C000%20food%20tray.%20This%20is%20what%20I'd%20like%20in%20it%3A" target="_blank" rel="noopener">Customise on WhatsApp</a>
   </div>
   <div class="ph tall"><img src="assets/images/FOOD_TRAY.jpeg" alt="A food tray packed with small chops, jollof rice, fried rice, spaghetti, waffles and fried chicken" style="object-position:50% 45%" loading="lazy"></div>
  </div>
 </section>
 
-<section class="how" id="how" data-bg="#FFF8F1">
+<section class="delivery" id="delivery">
+ <div class="wrap">
+  <h2>Delivery and pickup</h2>
+  <div class="dcards">
+   <div class="dc"><strong data-money="fee">₦1,500</strong><span>flat delivery within town, on every order placed on this website</span></div>
+   <div class="dc"><strong>Free</strong><span>delivery when your items total <span data-money="freeOver">₦25,000</span> or more</span></div>
+   <div class="dc"><strong>₦0</strong><span>to collect your order yourself. Choose Pickup when you place your order.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="how" id="how">
  <div class="wrap">
   <h2>How to order</h2>
   <ol class="steps">
@@ -92,15 +104,13 @@ show()},400)})})();
 </section>
 </main>
 
-<footer id="contact" data-bg="#F6EBDD">
+<footer id="contact">
+ <div class="layers" role="presentation"></div>
  <div class="wrap">
-  <p class="tag">One bite &amp; you're hooked.</p>
+  <img class="flogo" src="assets/logo.png" alt="Twzee Foods: one bite and you're hooked" width="720" height="611" loading="lazy">
   <div class="btns"><a class="btn" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener">Instagram @twzee_foods</a></div>
   <small>© 2026 Twzee Foods</small>
  </div>
- <div class="layers" role="presentation"></div>
- <!-- Giant wordmark: uses assets/logo.svg, so the real logo replaces it automatically -->
- <div class="giant" aria-hidden="true"><img src="assets/logo.svg" alt="" loading="lazy"></div>
 </footer>
 
 <a class="btn fab" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
@@ -108,11 +118,16 @@ show()},400)})})();
 <dialog id="dlg" aria-labelledby="dt">
  <div class="dh"><h2 id="dt">Your order</h2><button type="button" id="close" class="btn ghost sm">Close</button></div>
  <ul id="list"></ul>
- <p class="tot">Estimated total <strong id="tot"></strong></p>
+ <fieldset class="fulfil"><legend>How would you like your order?</legend>
+  <label class="opt"><input type="radio" name="fulfil" value="delivery" checked><span><b>Delivery</b><small id="d-note">₦1,500 flat, within town</small></span></label>
+  <label class="opt"><input type="radio" name="fulfil" value="pickup"><span><b>Pickup</b><small>No delivery fee</small></span></label>
+ </fieldset>
+ <p class="nudge" id="nudge" aria-live="polite"></p>
+ <dl class="sum"><div><dt>Subtotal</dt><dd id="sub"></dd></div><div><dt>Delivery</dt><dd id="dfee"></dd></div><div class="t"><dt>Estimated total</dt><dd id="tot"></dd></div></dl>
  <p class="note">The final amount is confirmed with you on WhatsApp.</p>
  <a class="btn" id="send" href="#" target="_blank" rel="noopener">Send order on WhatsApp</a>
 </dialog>
-<script src="js/menu-data.js?v=4"></script>
-<script src="js/main.js?v=4"></script>
+<script src="js/menu-data.js?v=5"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>
