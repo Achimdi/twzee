@@ -1,6 +1,6 @@
 /* TWZEE FOODS main script. Every feature runs inside run(), so one failure can never stop the others (errors are logged to the console). */
 (()=>{
-window.TWZEE_JS=6;
+window.TWZEE_JS=7;
 const root=document.documentElement;
 setTimeout(()=>root.classList.add("rv-all"),2000); /* failsafe: reveal everything after 2s, whatever happens */
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -62,9 +62,32 @@ run("tray",()=>{const T=M.trays,p=$("#tray-price"),b=$("#tray-add"),q=$("#tray-a
 run("info",()=>{$$("[data-within]").forEach(e=>e.textContent=within);
  $$("[data-info]").forEach(li=>{const k=li.dataset.info,v=String(I[k]||"").trim();if(!v)return;const s=$("span",li);if(s)s.textContent=v;
   if(k=="phone"){const a=$("a",li);if(a)a.href="tel:"+v.replace(/[^\d+]/g,"")}li.hidden=false});
- const di=$("#dinfo"),txt=[I.hours&&"Open "+String(I.hours).trim(),I.lead&&String(I.lead).trim()].filter(Boolean).join(". ");if(di&&txt){di.textContent=txt+".";di.hidden=false}
+ const di=$("#dinfo"),txt=[I.hours&&!I.open&&"Open "+String(I.hours).trim(),I.lead&&String(I.lead).trim()].filter(Boolean).join(". ");if(di&&txt){di.textContent=txt+".";di.hidden=false}
  const ln=$("#lead-note");if(ln&&I.lead){ln.textContent=String(I.lead).trim();ln.hidden=false}});
 run("delivery",()=>{const D=typeof DELIVERY!=="undefined"?DELIVERY:null;if(D)$$("[data-money]").forEach(e=>{if(D[e.dataset.money]!=null)e.textContent=money(D[e.dataset.money])})});
+
+/* opening hours: live "Open now / Closed" badge, weekly card and a note in the cart. Always Nigerian time (UTC+1, no daylight saving), wherever the visitor is. */
+run("hours",()=>{const O=I.open;if(!O||O.from==null||O.to==null)return;
+ const DN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],DL=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+ const days=String(O.days||"").split(",").map(d=>DN.findIndex(x=>x.toLowerCase()==d.trim().slice(0,3).toLowerCase())).filter(d=>d>=0);if(!days.length)return;
+ const t=h=>{const hh=Math.floor(h)%24,m=Math.round((h-Math.floor(h))*60);return (hh%12||12)+(m?":"+String(m).padStart(2,"0"):"")+(hh<12?"am":"pm")};
+ const span=`${t(O.from)} to ${t(O.to)}`;
+ const mf=d=>(d+6)%7,sorted=[...days].sort((a,b)=>mf(a)-mf(b));
+ const range=sorted.length==7?"Every day":mf(sorted[sorted.length-1])-mf(sorted[0])==sorted.length-1?`${DL[sorted[0]]} to ${DL[sorted[sorted.length-1]]}`:sorted.map(d=>DN[d]).join(", ");
+ const now=()=>{const d=new Date(Date.now()+36e5);return {day:d.getUTCDay(),h:d.getUTCHours()+d.getUTCMinutes()/60}};
+ const state=()=>{const {day,h}=now();
+  if(days.includes(day)&&h>=O.from&&h<O.to){const soon=O.to-h<=1;return {open:true,soon,text:`${soon?"Closing soon":"Open now"} · until ${t(O.to)}`}}
+  if(days.includes(day)&&h<O.from)return {open:false,next:`${t(O.from)} today`};
+  for(let k=1;k<=7;k++){const d=(day+k)%7;if(days.includes(d))return {open:false,next:`${t(O.from)} ${k==1?"tomorrow":DL[d]}`}}
+  return {open:false}};
+ const sh=$("#strip-hours");if(sh)sh.innerHTML=`<span class="ic">${ico("clock")}</span><span><b>Open ${span}</b><small>${range}</small></span>`;
+ const wk=$("#week");if(wk)wk.innerHTML=[1,2,3,4,5,6,0].map(d=>`<li data-d="${d}"${days.includes(d)?"":' class="off"'}><b>${DL[d]}</b><span>${days.includes(d)?span:"Closed"}</span></li>`).join("");
+ const hc=$("#hours");if(hc)hc.hidden=false;
+ const tick=()=>{const s=state(),{day}=now(),txt=s.open?s.text:"Closed"+(s.next?` · opens ${s.next}`:"");
+  $$("[data-status]").forEach(e=>{e.hidden=false;e.classList.toggle("is-open",s.open);e.classList.toggle("soon",!!s.soon);const sp=$("span",e);if(sp)sp.textContent=txt});
+  if(wk)$$("li",wk).forEach(li=>{const on=+li.dataset.d===day;li.classList.toggle("today",on);if(on)li.setAttribute("aria-current","date");else li.removeAttribute("aria-current")});
+  const cn=$("#closed-note");if(cn){cn.hidden=s.open;cn.textContent=s.open?"":`We're closed right now${s.next?` and open again at ${s.next}`:""}. You can still send your order, and we'll confirm it when we open.`}};
+ tick();setInterval(tick,6e4)});
 
 /* screen-reader announcements */
 const liveEl=$("#live");let liveT;

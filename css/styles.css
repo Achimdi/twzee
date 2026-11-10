@@ -1,6 +1,6 @@
 /* TWZEE FOODS. Brand colours taken from the logo: green, white and orange only (change them in :root). Every photo uses one shape: curved top, flat bottom.
    Contrast rule: orange is only ever a fill behind DARK GREEN text, never behind white text. */
-:root{--white:#fff;--green:#0A7F0D;--green-dk:#0B3D0E;--orange:#FF7900;--mute:#3A6B3D;--tint:#EAF6EA;--line:#CFE5D0;--hh:64px;--ver:8;
+:root{--white:#fff;--green:#0A7F0D;--green-dk:#0B3D0E;--orange:#FF7900;--mute:#3A6B3D;--tint:#EAF6EA;--line:#CFE5D0;--hh:64px;--ver:9;
  --sh:0 1px 2px rgba(11,61,14,.06),0 10px 28px rgba(11,61,14,.08);--lift:0 4px 0 var(--green-dk);
  --serif:Fraunces,Georgia,serif;--sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--arch:999px 999px 18px 18px}
 *{box-sizing:border-box}
@@ -229,6 +229,22 @@ dialog::backdrop{background:rgba(11,61,14,.5)}
 .note{margin:8px 0 0;font-size:.8rem;color:var(--mute);text-align:center}
 .sent{margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--tint)}.sent p{display:flex;gap:10px;margin:0;font-size:.9rem;line-height:1.4}.sent .i{color:var(--green);margin-top:1px}.sent .linkbtn{margin:2px 0 0 30px;min-height:40px;color:var(--green-dk)}
 
+/* opening hours: live status badge and weekly card */
+.status{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:7px 16px 7px 12px;border-radius:999px;background:#fff;border:1.5px solid var(--line);color:var(--green-dk);font-weight:700;font-size:.9rem;line-height:1.2;text-decoration:none}
+a.status:hover{border-color:var(--green)}
+.dot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--orange)}
+.status.is-open .dot{background:var(--green);animation:pulse 2s infinite}.status.soon .dot{background:var(--orange)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(10,127,13,.45)}70%,100%{box-shadow:0 0 0 9px rgba(10,127,13,0)}}
+.hours{display:grid;gap:16px;margin-top:16px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh)}
+.hhead{display:flex;align-items:center;gap:14px}.hhead .ic{background:var(--tint);border:0}.hhead h3{margin:0 0 2px;font-size:1.35rem}
+.hhead .status{margin:0;padding:0;border:0;background:none;font-size:.88rem}
+.week{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.week li{position:relative;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:42px;padding:0 14px;border-radius:12px;font-variant-numeric:tabular-nums}
+.week b{font-weight:700}.week .off{color:var(--mute)}.week .off b{font-weight:500}
+.week .today{background:var(--green);color:#fff}
+.week .today b::after{content:"Today";margin-left:8px;padding:2px 8px;border-radius:999px;background:var(--orange);color:var(--green-dk);font-size:.7rem;font-weight:800;vertical-align:2px}
+.closed-note{background:#FFF4EA;border-left:4px solid var(--orange);border-radius:0 12px 12px 0}
+
 /* phones */
 @media(max-width:599px){
  .cat{padding:40px 0 32px}.cat h2{font-size:2.2rem}.lead{font-size:.95rem;margin-bottom:.6em}
@@ -260,6 +276,10 @@ dialog::backdrop{background:rgba(11,61,14,.5)}
  .cat{padding:72px 0 56px}.trays .wrap{grid-template-columns:1.2fr .8fr}.steps,.dcards{grid-template-columns:repeat(3,1fr)}
  .trays .ph{max-width:340px}
  .fgrid{grid-template-columns:1.5fr 1fr 1.1fr 1.1fr;padding:56px 0 32px}
+ .hours{grid-template-columns:auto 1fr;align-items:center;gap:36px;padding:24px 28px}
+ .week{grid-template-columns:repeat(7,1fr);gap:8px}.week li{flex-direction:column;justify-content:center;gap:2px;min-height:72px;padding:8px 4px;text-align:center;border:1.5px solid var(--line)}
+ .week span{font-size:.84rem}.week .today{border-color:var(--green-dk)}
+ .week .today b::after{position:absolute;top:-11px;left:50%;transform:translateX(-50%);margin:0}
  .bar{left:auto;right:24px;bottom:24px;width:380px}
  .ed.solo{grid-template-columns:1fr;gap:28px}.solo .side{position:static}.solo .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
 }

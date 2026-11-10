@@ -6,15 +6,18 @@
    opt: optional choice shown on the item (for example chicken or beef). The choice is added to the item name in the order.
    CHAT NUMBER: change SITE.wa (digits only, with country code). INSTAGRAM: change SITE.ig.
    Also update the same number and link in index.html (JSON-LD block near the top). */
-var TWZEE_DATA=6; /* version stamp used by the setup check in index.html; leave as is */
+var TWZEE_DATA=7; /* version stamp used by the setup check in index.html; leave as is */
 /* DELIVERY: flat fee within town for orders placed on the website. Delivery becomes free once the items total reaches freeOver. Set fee:0 to switch delivery fees off. */
 const DELIVERY={fee:1500,freeOver:25000};
 const SITE={wa:"2349132155228",ig:"https://www.instagram.com/twzee_foods/"};
 /* INFO: optional business details. Anything left as "" is simply not shown.
    town: shown as "within <town>" in delivery text (blank = "within town").
-   hours: opening hours, e.g. "Mon to Sat, 8am to 7pm".  lead: ordering notice, e.g. "Trays need 48 hours' notice".
+   hours: opening hours as shown in the footer.  lead: ordering notice, e.g. "Trays need 48 hours' notice".
+   open: drives the live "Open now / Closed" badge and the weekly hours card (Nigerian time). days = open days;
+         from and to = opening and closing hour on a 24-hour clock (8 = 8am, 18 = 6pm, 17.5 = 5:30pm). Delete open to hide them.
    phone: a number for calls, e.g. "+234 913 215 5228".  address: pickup address. */
-const INFO={town:"",hours:"",lead:"",phone:"",address:""};
+const INFO={town:"",hours:"Mon to Sat, 8am to 6pm",lead:"",phone:"",address:"",
+ open:{days:"Mon,Tue,Wed,Thu,Fri,Sat",from:8,to:18}};
 const MENU={
 parfait:{title:"Parfait",desc:"Greek yoghurt parfait, sweetened, topped with granola, nuts and fruit.",
  sizes:[{l:"400ml",ml:400,p:4000},{l:"550ml",ml:550,p:5000},{l:"600ml",ml:600,p:5500},{l:"1 litre",ml:1000,p:9500}],
@@ -36,8 +39,7 @@ drinks:{title:"Drinks",desc:"Fresh juices, zobo and yoghurt drinks, all in bottl
  {n:"Carrot Glow",p:4000,u:"per bottle",ing:"carrot, pineapple, turmeric",f:"CARROT.jpeg",pos:"45% 55%",a:"A bottle of Carrot Glow juice beside a carrot"},
  {n:"Citrus Bliss",p:3500,u:"per bottle",ing:"orange, lemon",f:"CITRUS.jpeg",pos:"50% 55%",a:"A bottle of Citrus Bliss juice between citrus fruits"},
  {n:"Apple Blast",p:3500,u:"per bottle",ing:"pineapple, green apple, red apple, ginger",f:"APPLE.jpeg",pos:"50% 50%",a:"Bottles of Apple Blast juice"},
- /* HIDDEN: BFB Belly Fat Burner. ADD A PRICE HERE (e.g. p:3500) and it will appear on the page. */
- {n:"BFB Belly Fat Burner",p:null,u:"per bottle",ing:"celery stalk, parsley, kale, mint, turmeric",f:"BURNER.jpeg",pos:"50% 55%",a:"A bottle of BFB Belly Fat Burner juice"},
+ {n:"BFB Belly Fat Burner",p:3500,u:"per bottle",ing:"celery stalk, parsley, kale, mint, turmeric",f:"BURNER.jpeg",pos:"50% 55%",a:"A bottle of BFB Belly Fat Burner juice"},
  {n:"Zobo",p:1000,u:"per bottle",cls:"zobo"}],
  yog:[{n:"Milky Yoghurt 500ml",p:3000,f:"MILKY.jpeg",pos:"50% 45%",a:"A hand holding a bottle of sweetened plain yoghurt"},
       {n:"Strawberry Yoghurt 500ml",p:3500,f:"STRAWBERRY.jpeg",pos:"50% 45%",a:"A hand holding a bottle of Strawberry Yoghurt"}]},

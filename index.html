@@ -25,12 +25,12 @@
 (function(){var n=[];function show(){if(!n.length||!document.body)return;var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;z-index:9999;left:12px;right:12px;top:76px;padding:14px 18px;background:#fff;border:3px solid #FF7900;border-radius:14px;font:15px/1.45 system-ui,sans-serif;color:#0B3D0E;box-shadow:0 8px 30px rgba(0,0,0,.3)";d.innerHTML="<b>Twzee Foods setup check</b><br>"+n.join("<br>");document.body.appendChild(d)}
 window.addEventListener("error",function(e){if(e.target&&e.target!==window){var u=e.target.src||e.target.href||"";if(u.indexOf("fonts.g")<0)n.push("Could not load: "+u.split("/").slice(-2).join("/"))}else n.push("Script error: "+e.message+" ("+String(e.filename||"").split("/").pop()+":"+e.lineno+")")},true);
 window.addEventListener("load",function(){setTimeout(function(){
-if(window.TWZEE_DATA!==6)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
-if(window.TWZEE_JS!==6)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
-if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="8")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_DATA!==7)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_JS!==7)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
+if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="9")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
 show()},400)})})();
 </script>
-<link rel="stylesheet" href="css/styles.css?v=8">
+<link rel="stylesheet" href="css/styles.css?v=9">
 <!-- PHONE / INSTAGRAM: update here too if they change (and in js/menu-data.js) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Twzee Foods","telephone":"+2349132155228","sameAs":["https://www.instagram.com/twzee_foods/"],"servesCuisine":"Healthy food","slogan":"One bite & you're hooked."}</script>
 </head>
@@ -76,6 +76,7 @@ show()},400)})})();
    <h1>Healthy tastes <em>better</em> here.</h1>
    <p class="sub">Build your order from the menu, choose delivery or pickup, and send it to us in under a minute. We confirm the total and timing with you.</p>
    <div class="btns"><a class="btn" href="#menu">Start your order<svg class="i"><use href="#i-arrow"/></svg></a><a class="btn ghost" href="#how">How it works</a></div>
+   <a class="status" href="#hours" data-status hidden><i class="dot"></i><span></span></a>
   </div>
   <div class="hv"><figure class="vid">
    <video id="vid" muted autoplay loop playsinline preload="metadata" poster="assets/images/HERO_PAGE.jpeg" aria-label="Twzee Foods video: granola being baked and poured, chicken prep and a loaf being enjoyed">
@@ -87,7 +88,7 @@ show()},400)})})();
  </div>
 </section>
 <div class="strip"><ul class="wrap">
- <li><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><span><b>Made fresh</b><small>Real ingredients, made to order</small></span></li>
+ <li id="strip-hours"><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><span><b>Made fresh</b><small>Real ingredients, made to order</small></span></li>
  <li><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><span><b><span data-money="fee">₦1,500</span> delivery</b><small>Flat fee <span data-within>within town</span></small></span></li>
  <li><span class="ic"><svg class="i"><use href="#i-gift"/></svg></span><span><b>Free delivery</b><small>On orders from <span data-money="freeOver">₦25,000</span></small></span></li>
  <li><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><span><b>Free pickup</b><small>Collect it yourself, any order</small></span></li>
@@ -120,6 +121,10 @@ show()},400)})})();
    <div class="dc"><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><strong data-money="fee">₦1,500</strong><span>Flat delivery <span data-within>within town</span>, on every order placed on this website.</span></div>
    <div class="dc hl"><span class="ic"><svg class="i"><use href="#i-gift"/></svg></span><strong>Free</strong><span>Delivery when your items total <span data-money="freeOver">₦25,000</span> or more.</span></div>
    <div class="dc"><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><strong>₦0</strong><span>Collect your order yourself. Choose Pickup when you check out.</span></div>
+  </div>
+  <div class="hours" id="hours" hidden>
+   <div class="hhead"><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><div><h3>Opening hours</h3><p class="status" data-status hidden><i class="dot"></i><span></span></p></div></div>
+   <ul class="week" id="week" aria-label="Opening hours by day"></ul>
   </div>
   <p class="dinfo" id="dinfo" hidden></p>
  </div>
@@ -193,6 +198,7 @@ show()},400)})})();
    </div>
    <dl class="sum"><div><dt>Subtotal</dt><dd id="sub"></dd></div><div><dt>Delivery</dt><dd id="dfee"></dd></div></dl>
    <p class="lead-note" id="lead-note" hidden></p>
+   <p class="lead-note closed-note" id="closed-note" hidden></p>
    <button type="button" id="clear" class="linkbtn"><svg class="i"><use href="#i-trash"/></svg><span>Clear my order</span></button>
   </div>
  </div>
@@ -204,7 +210,7 @@ show()},400)})})();
   <div class="sent" id="sent" hidden><p><svg class="i"><use href="#i-check"/></svg><span><b>Almost done.</b> Press send in WhatsApp and we'll confirm your order.</span></p><button type="button" class="linkbtn" id="fresh">Start a new order</button></div>
  </div>
 </dialog>
-<script src="js/menu-data.js?v=6"></script>
-<script src="js/main.js?v=6"></script>
+<script src="js/menu-data.js?v=7"></script>
+<script src="js/main.js?v=7"></script>
 </body>
 </html>
