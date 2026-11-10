@@ -1,14 +1,20 @@
 /* TWZEE FOODS: EDIT MENU HERE. (z = optional zoom for a photo, used to trim white edges) p = price in naira. Change names, prices and descriptions freely.
    Each item is in one of three states:
-   - priced: has a number p -> shows "Add to order"
-   - ask: has an "ask" message -> shows an Ask on WhatsApp button (a price p, if set, is still displayed)
+   - priced: has a number p -> shows "Add"
+   - ask: has an "ask" message -> shows an "Ask us" button that opens a chat (a price p, if set, is still displayed)
    - hidden: p:null and no "ask" -> NOT shown on the page until you add a price
-   WHATSAPP NUMBER: change SITE.wa (digits only, with country code). INSTAGRAM: change SITE.ig.
-   Also update the same number and link in index.html (footer fallback links and the JSON-LD block). */
-var TWZEE_DATA=5; /* version stamp used by the setup check in index.html; leave as is */
+   opt: optional choice shown on the item (for example chicken or beef). The choice is added to the item name in the order.
+   CHAT NUMBER: change SITE.wa (digits only, with country code). INSTAGRAM: change SITE.ig.
+   Also update the same number and link in index.html (JSON-LD block near the top). */
+var TWZEE_DATA=6; /* version stamp used by the setup check in index.html; leave as is */
 /* DELIVERY: flat fee within town for orders placed on the website. Delivery becomes free once the items total reaches freeOver. Set fee:0 to switch delivery fees off. */
 const DELIVERY={fee:1500,freeOver:25000};
 const SITE={wa:"2349132155228",ig:"https://www.instagram.com/twzee_foods/"};
+/* INFO: optional business details. Anything left as "" is simply not shown.
+   town: shown as "within <town>" in delivery text (blank = "within town").
+   hours: opening hours, e.g. "Mon to Sat, 8am to 7pm".  lead: ordering notice, e.g. "Trays need 48 hours' notice".
+   phone: a number for calls, e.g. "+234 913 215 5228".  address: pickup address. */
+const INFO={town:"",hours:"",lead:"",phone:"",address:""};
 const MENU={
 parfait:{title:"Parfait",desc:"Greek yoghurt parfait, sweetened, topped with granola, nuts and fruit.",
  sizes:[{l:"400ml",ml:400,p:4000},{l:"550ml",ml:550,p:5000},{l:"600ml",ml:600,p:5500},{l:"1 litre",ml:1000,p:9500}],
@@ -41,10 +47,10 @@ salads:{title:"Salads",desc:"Colourful salad bowls.",items:[
  {n:"Avocado Salad",p:4500,f:"avocado_salad.jpeg",pos:"50% 40%",d:"Avocado, cucumber and tomato with bow-tie pasta, carrot, grapes and sesame seeds.",a:"Three domed Twzee Foods salad bowls with avocado, cucumber, tomato and bow-tie pasta, beside a lemon and a strawberry"},
  {n:"Avocado and Spicy Chicken Salad",p:5000,f:"avocado_and_chicken_1_.jpeg",pos:"50% 45%",z:1.55,d:"Spicy chicken with avocado, tomato, cucumber, lettuce and grapes on shredded cabbage and carrot.",a:"Salad box with spicy chicken, avocado, tomato, cucumber and lettuce"}]},
 chops:{title:"Small Chops",desc:"Choose a pack, or order single pieces.",
- packs:[{n:"Intimate Pack",p:13000,d:"10 samosa, 10 spring rolls, 30 puff puff, 10 chicken or beef. Tell us chicken or beef on WhatsApp.",f:"INTIMATE_PACK.jpeg",pos:"50% 50%",a:"A Twzee Foods box of spring rolls, samosa and puff puff on green leaves"},
-        {n:"Me To You Pack",p:21000,d:"15 samosa, 15 spring rolls, 50 puff puff, 10 chicken or beef. Tell us chicken or beef on WhatsApp.",f:"ME_TO_YOU_PACK.jpeg",pos:"50% 40%",a:"Stacked Twzee Foods boxes packed with puff puff"},
-        {n:"Events Pack",d:"For events only: 1 samosa, 1 spring roll, 4 puff puff, 1 chicken.",f:"ONLY_FOR_EVENT_.jpeg",pos:"50% 50%",a:"Rows of foil trays with puff puff, samosa, spring roll and a sauce pot",btn:"Ask on WhatsApp for event pricing",ask:"Hello Twzee Foods! I'd like event pricing for the events pack (1 samosa, 1 spring roll, 4 puff puff, 1 chicken). Please tell me the price and the minimum order."}],
+ packs:[{n:"Intimate Pack",p:13000,opt:["Chicken","Beef"],d:"10 samosa, 10 spring rolls, 30 puff puff, 10 chicken or beef.",f:"INTIMATE_PACK.jpeg",pos:"50% 50%",a:"A Twzee Foods box of spring rolls, samosa and puff puff on green leaves"},
+        {n:"Me To You Pack",p:21000,opt:["Chicken","Beef"],d:"15 samosa, 15 spring rolls, 50 puff puff, 10 chicken or beef.",f:"ME_TO_YOU_PACK.jpeg",pos:"50% 40%",a:"Stacked Twzee Foods boxes packed with puff puff"},
+        {n:"Events Pack",d:"For events only: 1 samosa, 1 spring roll, 4 puff puff, 1 chicken.",f:"ONLY_FOR_EVENT_.jpeg",pos:"50% 50%",a:"Rows of foil trays with puff puff, samosa, spring roll and a sauce pot",btn:"Get event pricing",ask:"Hello Twzee Foods! I'd like event pricing for the events pack (1 samosa, 1 spring roll, 4 puff puff, 1 chicken). Please tell me the price and the minimum order."}],
  single:"Single pieces: chicken ₦1,000 to ₦1,500 each, beef ₦500 each. Minimum order of 10 pieces of your choice.",
  singleAsk:"Hello Twzee Foods! I'd like to order small chops by the piece (minimum 10 pieces). Please tell me what is available."},
-trays:{n:"Food Tray",p:60000,btn:"Customise on WhatsApp",ask:"Hello Twzee Foods! I'd like to order the ₦60,000 food tray. This is what I'd like in it:\n"}
+trays:{n:"Food Tray",p:60000,ask:"Hello Twzee Foods! I have a question about the ₦60,000 food tray:\n"}
 };
