@@ -6,7 +6,7 @@
    opt: optional choice shown on the item (for example chicken or beef). The choice is added to the item name in the order.
    CHAT NUMBER: change SITE.wa (digits only, with country code). INSTAGRAM: change SITE.ig.
    Also update the same number and link in index.html (JSON-LD block near the top). */
-var TWZEE_DATA=7; /* version stamp used by the setup check in index.html; leave as is */
+var TWZEE_DATA=8; /* version stamp used by the setup check in index.html; leave as is */
 /* DELIVERY: flat fee within town for orders placed on the website. Delivery becomes free once the items total reaches freeOver. Set fee:0 to switch delivery fees off. */
 const DELIVERY={fee:1500,freeOver:25000};
 const SITE={wa:"2349132155228",ig:"https://www.instagram.com/twzee_foods/"};
@@ -16,7 +16,7 @@ const SITE={wa:"2349132155228",ig:"https://www.instagram.com/twzee_foods/"};
    open: drives the live "Open now / Closed" badge and the weekly hours card (Nigerian time). days = open days;
          from and to = opening and closing hour on a 24-hour clock (8 = 8am, 18 = 6pm, 17.5 = 5:30pm). Delete open to hide them.
    phone: a number for calls, e.g. "+234 913 215 5228".  address: pickup address. */
-const INFO={town:"",hours:"Mon to Sat, 8am to 6pm",lead:"",phone:"",address:"",
+const INFO={town:"Enugu",hours:"Mon to Sat, 8am to 6pm",lead:"",phone:"",address:"",
  open:{days:"Mon,Tue,Wed,Thu,Fri,Sat",from:8,to:18}};
 const MENU={
 parfait:{title:"Parfait",desc:"Greek yoghurt parfait, sweetened, topped with granola, nuts and fruit.",

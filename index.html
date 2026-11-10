@@ -25,7 +25,7 @@
 (function(){var n=[];function show(){if(!n.length||!document.body)return;var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;z-index:9999;left:12px;right:12px;top:76px;padding:14px 18px;background:#fff;border:3px solid #FF7900;border-radius:14px;font:15px/1.45 system-ui,sans-serif;color:#0B3D0E;box-shadow:0 8px 30px rgba(0,0,0,.3)";d.innerHTML="<b>Twzee Foods setup check</b><br>"+n.join("<br>");document.body.appendChild(d)}
 window.addEventListener("error",function(e){if(e.target&&e.target!==window){var u=e.target.src||e.target.href||"";if(u.indexOf("fonts.g")<0)n.push("Could not load: "+u.split("/").slice(-2).join("/"))}else n.push("Script error: "+e.message+" ("+String(e.filename||"").split("/").pop()+":"+e.lineno+")")},true);
 window.addEventListener("load",function(){setTimeout(function(){
-if(window.TWZEE_DATA!==7)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_DATA!==8)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
 if(window.TWZEE_JS!==7)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
 if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="9")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
 show()},400)})})();
@@ -89,7 +89,7 @@ show()},400)})})();
 </section>
 <div class="strip"><ul class="wrap">
  <li id="strip-hours"><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><span><b>Made fresh</b><small>Real ingredients, made to order</small></span></li>
- <li><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><span><b><span data-money="fee">₦1,500</span> delivery</b><small>Flat fee <span data-within>within town</span></small></span></li>
+ <li><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><span><b><span data-money="fee">₦1,500</span> delivery</b><small>Flat fee <span data-within>within Enugu</span></small></span></li>
  <li><span class="ic"><svg class="i"><use href="#i-gift"/></svg></span><span><b>Free delivery</b><small>On orders from <span data-money="freeOver">₦25,000</span></small></span></li>
  <li><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><span><b>Free pickup</b><small>Collect it yourself, any order</small></span></li>
 </ul></div>
@@ -118,7 +118,7 @@ show()},400)})})();
   <p class="eyebrow">Delivery and pickup</p>
   <h2>Simple, fair delivery</h2>
   <div class="dcards">
-   <div class="dc"><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><strong data-money="fee">₦1,500</strong><span>Flat delivery <span data-within>within town</span>, on every order placed on this website.</span></div>
+   <div class="dc"><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><strong data-money="fee">₦1,500</strong><span>Flat delivery <span data-within>within Enugu</span>, on every order placed on this website.</span></div>
    <div class="dc hl"><span class="ic"><svg class="i"><use href="#i-gift"/></svg></span><strong>Free</strong><span>Delivery when your items total <span data-money="freeOver">₦25,000</span> or more.</span></div>
    <div class="dc"><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><strong>₦0</strong><span>Collect your order yourself. Choose Pickup when you check out.</span></div>
   </div>
@@ -161,7 +161,7 @@ show()},400)})})();
   <div class="fcol">
    <h3>Delivery</h3>
    <ul class="flinks plain">
-    <li><svg class="i"><use href="#i-truck"/></svg><span><span data-money="fee">₦1,500</span> flat, <span data-within>within town</span></span></li>
+    <li><svg class="i"><use href="#i-truck"/></svg><span><span data-money="fee">₦1,500</span> flat, <span data-within>within Enugu</span></span></li>
     <li><svg class="i"><use href="#i-gift"/></svg><span>Free from <span data-money="freeOver">₦25,000</span></span></li>
     <li><svg class="i"><use href="#i-store"/></svg><span>Pickup is always free</span></li>
     <li data-info="hours" hidden><svg class="i"><use href="#i-clock"/></svg><span></span></li>
@@ -187,7 +187,7 @@ show()},400)})})();
   <div class="empty" id="empty" hidden><span class="ic"><svg class="i"><use href="#i-bag"/></svg></span><p><b>Your order is empty</b><br>Add something tasty from the menu.</p><a class="btn sm" href="#menu" id="browse">Browse the menu</a></div>
   <div id="checkout">
    <fieldset class="fulfil"><legend>How would you like it?</legend>
-    <label class="opt"><input type="radio" name="fulfil" value="delivery" checked><span><svg class="i"><use href="#i-truck"/></svg><b>Delivery</b><small id="d-note">₦1,500 flat, within town</small></span></label>
+    <label class="opt"><input type="radio" name="fulfil" value="delivery" checked><span><svg class="i"><use href="#i-truck"/></svg><b>Delivery</b><small id="d-note">₦1,500 flat, within Enugu</small></span></label>
     <label class="opt"><input type="radio" name="fulfil" value="pickup"><span><svg class="i"><use href="#i-store"/></svg><b>Pickup</b><small>No delivery fee</small></span></label>
    </fieldset>
    <div class="prog" id="prog"><p class="nudge" id="nudge"></p><div class="track"><i id="pbar"></i></div></div>
@@ -210,7 +210,7 @@ show()},400)})})();
   <div class="sent" id="sent" hidden><p><svg class="i"><use href="#i-check"/></svg><span><b>Almost done.</b> Press send in WhatsApp and we'll confirm your order.</span></p><button type="button" class="linkbtn" id="fresh">Start a new order</button></div>
  </div>
 </dialog>
-<script src="js/menu-data.js?v=7"></script>
+<script src="js/menu-data.js?v=8"></script>
 <script src="js/main.js?v=7"></script>
 </body>
 </html>
