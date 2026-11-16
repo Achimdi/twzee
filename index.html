@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Twzee Foods | Parfaits, Salads, Shawarma and Small Chops</title>
-<meta name="description" content="Greek yoghurt parfaits, ROC granola, shawarma, salads, small chops and custom food trays. Build your order online, choose delivery or pickup, and send it in a minute.">
+<title>Twzee Foods | Healthy Food in Enugu: Parfaits, Salads, Shawarma and Juices</title>
+<meta name="description" content="Greek yoghurt parfaits, ROC granola, fresh juices, salads, shawarma, small chops and custom food trays in Enugu. See the full menu and prices, and order in a minute.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Twzee Foods: One bite &amp; you're hooked.">
-<meta property="og:description" content="Parfaits, salads, shawarma and small chops. Build your order online in a minute.">
+<meta property="og:description" content="Parfaits, salads, shawarma, juices and small chops in Enugu. See the menu and order in a minute.">
 <!-- After going live, change og:image to the full https:// address of the image -->
-<meta property="og:image" content="assets/images/HERO_PAGE.jpeg">
+<meta property="og:image" content="assets/web/parfait-1200.jpg">
 <meta name="theme-color" content="#0A7F0D">
 <meta name="color-scheme" content="light">
-<!-- LOGO: the header uses assets/logo-mark.png and the footer uses assets/logo.png (both made from assets/logo-source.png). FAVICON: favicon.ico, favicon-16.png, favicon-32.png and the other icon files at the site root were made from the same logo. -->
+<!-- PHOTO VERSION: the ?v=3 on the photos below should match PHOTOS_V in js/menu-data.js. LOGO: the header uses assets/logo-mark.png and the footer uses assets/logo.png. PHOTOS: the page uses the web copies in assets/web (made from assets/images). -->
 <link rel="icon" href="favicon.ico?v=7" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=7">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=7">
@@ -25,14 +25,14 @@
 (function(){var n=[];function show(){if(!n.length||!document.body)return;var d=document.createElement("div");d.setAttribute("role","alert");d.style.cssText="position:fixed;z-index:9999;left:12px;right:12px;top:76px;padding:14px 18px;background:#fff;border:3px solid #FF7900;border-radius:14px;font:15px/1.45 system-ui,sans-serif;color:#0B3D0E;box-shadow:0 8px 30px rgba(0,0,0,.3)";d.innerHTML="<b>Twzee Foods setup check</b><br>"+n.join("<br>");document.body.appendChild(d)}
 window.addEventListener("error",function(e){if(e.target&&e.target!==window){var u=e.target.src||e.target.href||"";if(u.indexOf("fonts.g")<0)n.push("Could not load: "+u.split("/").slice(-2).join("/"))}else n.push("Script error: "+e.message+" ("+String(e.filename||"").split("/").pop()+":"+e.lineno+")")},true);
 window.addEventListener("load",function(){setTimeout(function(){
-if(window.TWZEE_DATA!==8)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
-if(window.TWZEE_JS!==7)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
-if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="9")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_DATA!==14)n.push("js/menu-data.js is missing or out of date. Replace it with the latest file.");
+if(window.TWZEE_JS!==12)n.push("js/main.js is missing, out of date or stopped with an error. Replace it with the latest file.");
+if(getComputedStyle(document.documentElement).getPropertyValue("--ver").trim()!=="13")n.push("css/styles.css is missing or out of date. Replace it with the latest file.");
 show()},400)})})();
 </script>
-<link rel="stylesheet" href="css/styles.css?v=9">
+<link rel="stylesheet" href="css/styles.css?v=13">
 <!-- PHONE / INSTAGRAM: update here too if they change (and in js/menu-data.js) -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Twzee Foods","telephone":"+2349132155228","sameAs":["https://www.instagram.com/twzee_foods/"],"servesCuisine":"Healthy food","slogan":"One bite & you're hooked."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Twzee Foods","telephone":"+2349132155228","sameAs":["https://www.instagram.com/twzee_foods/"],"servesCuisine":"Healthy food","slogan":"One bite & you're hooked.","address":{"@type":"PostalAddress","addressLocality":"Enugu","addressCountry":"NG"},"openingHours":"Mo-Sa 08:00-18:00","currenciesAccepted":"NGN"}</script>
 </head>
 <body>
 <!-- ICONS: simple line icons used across the page (<svg class="i"><use href="#i-name"/></svg>) -->
@@ -52,73 +52,129 @@ show()},400)})})();
  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
- <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4.5v15M6 13.5l6 6 6-6"/></symbol>
+ <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5.5 8.5 12l6.5 6.5"/></symbol>
+ <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5.5l6.5 6.5L9 18.5"/></symbol>
+ <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8.5 5.5v13M15.5 5.5v13"/></symbol>
+ <symbol id="i-play" viewBox="0 0 24 24"><path d="M7.5 5v14l11-7z"/></symbol>
  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 7"/></symbol>
  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5z"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6z"/><path d="m8.8 12 2.3 2.3 4.2-4.6"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></symbol>
+ <symbol id="i-chef" viewBox="0 0 24 24"><path d="M7 14.5h10V20H7zM7 14.5A4 4 0 0 1 6.5 6.6a4.5 4.5 0 0 1 8.6-1.3A3.8 3.8 0 1 1 17 14.5"/></symbol>
 </svg>
 <a class="skip" href="#menu">Skip to the menu</a>
+<div class="promo-bar"><div class="wrap"><span><svg class="i"><use href="#i-truck"/></svg><span>Free delivery <span data-within>within town</span> on orders from <b data-money="freeOver">₦25,000</b></span></span><span class="pb-h" data-hours-short hidden><svg class="i"><use href="#i-clock"/></svg><span></span></span></div></div>
 <header class="top">
  <div class="wrap">
   <a class="logo" href="#top" aria-label="Twzee Foods, home"><img src="assets/logo-mark.png" alt="Twzee Foods" width="560" height="475"></a>
   <nav id="nav" aria-label="Main">
-   <a href="#menu">Menu</a><a href="#delivery">Delivery</a><a href="#how">How it works</a><a href="#contact">Contact</a>
-   <a class="nav-x" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>Chat with us</a>
+   <a href="#menu">Menu</a><a href="#catering">Catering</a><a href="#story">Our kitchen</a><a href="#contact">Contact</a>
+   <span class="nav-x"><a data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>Chat with us</a><a data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener"><svg class="i"><use href="#i-insta"/></svg>Instagram</a></span>
   </nav>
+  <a class="ib ig-top" data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener" aria-label="Twzee Foods on Instagram"><svg class="i"><use href="#i-insta"/></svg></a>
   <a class="btn sm cartbtn" id="cartbtn" href="#menu"><svg class="i"><use href="#i-bag"/></svg><span>Order</span><b class="cnt" id="cnt" hidden>0</b></a>
   <button type="button" class="mt" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
  </div>
+ <div class="toast" id="toast" role="status" hidden><svg class="i"><use href="#i-check"/></svg><span id="toast-t"></span><button type="button" id="toast-view">View order</button></div>
 </header>
+
 <main id="top">
 <section class="hero">
  <div class="wrap">
   <div class="hcopy">
-   <p class="eyebrow">Parfaits · Salads · Shawarma · Small chops</p>
+   <p class="eyebrow">Healthy food, made fresh in <span data-town>Enugu</span></p>
    <h1>Healthy tastes <em>better</em> here.</h1>
-   <p class="sub">Build your order from the menu, choose delivery or pickup, and send it to us in under a minute. We confirm the total and timing with you.</p>
-   <div class="btns"><a class="btn" href="#menu">Start your order<svg class="i"><use href="#i-arrow"/></svg></a><a class="btn ghost" href="#how">How it works</a></div>
-   <a class="status" href="#hours" data-status hidden><i class="dot"></i><span></span></a>
+   <p class="sub">Parfaits, Greek yoghurt, fresh juices, salads, shawarma and small chops. See every price, build your order and send it to us in under a minute.</p>
+   <div class="btns"><a class="btn" href="#menu">Order now<svg class="i"><use href="#i-arrow"/></svg></a><a class="btn ghost" href="#catering">Catering and trays</a></div>
+   <div class="hmeta"><a class="status" href="#hours" data-status hidden><i class="dot"></i><span></span></a><a class="hlink" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg><span data-wa-show>+234 913 215 5228</span></a></div>
   </div>
+  <div class="promo" id="promo" aria-roledescription="carousel" aria-label="Featured products">
+   <div class="promo-track" id="promo-track"></div>
+   <div class="promo-ctl"><button type="button" class="ib" id="promo-prev" aria-label="Previous banner"><svg class="i"><use href="#i-left"/></svg></button><div class="dots" id="promo-dots"></div><button type="button" class="ib" id="promo-next" aria-label="Next banner"><svg class="i"><use href="#i-right"/></svg></button><button type="button" class="ib" id="promo-pause" aria-label="Pause banners"><svg class="i"><use href="#i-pause"/></svg></button></div>
+  </div>
+ </div>
+</section>
+
+<div class="strip"><ul class="wrap">
+ <li id="strip-hours"><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><span><b>Made fresh</b><small>Real ingredients, made to order</small></span></li>
+ <li><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><span><b><span data-money="fee">₦1,500</span> delivery</b><small>Flat fee <span data-within>within town</span></small></span></li>
+ <li><span class="ic"><svg class="i"><use href="#i-gift"/></svg></span><span><b>Free delivery</b><small>On orders from <span data-money="freeOver">₦25,000</span></small></span></li>
+ <li><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><span><b>Free pickup</b><small>Collect it yourself, any order</small></span></li>
+</ul></div>
+
+<section class="explore" id="explore" aria-labelledby="explore-h">
+ <div class="wrap">
+  <div class="shead"><div><p class="eyebrow">The menu</p><h2 id="explore-h">Explore by category</h2></div></div>
+  <ul class="cats" id="cats"></ul>
+ </div>
+</section>
+
+<section class="featured" id="featured" aria-labelledby="featured-h">
+ <div class="wrap">
+  <div class="shead"><div><p class="eyebrow">Signatures</p><h2 id="featured-h">The Twzee favourites to start with</h2></div><div class="rowctl"><button type="button" class="ib" data-row="-1" aria-label="Scroll back"><svg class="i"><use href="#i-left"/></svg></button><button type="button" class="ib" data-row="1" aria-label="Scroll forward"><svg class="i"><use href="#i-right"/></svg></button></div></div>
+  <div class="row" id="feat-row"></div>
+ </div>
+</section>
+
+<div id="menu" class="menu">
+ <nav class="chips" id="chips" aria-label="Menu categories"></nav>
+ <!-- Menu sections are rendered from js/menu-data.js -->
+ <noscript><p class="wrap">Please turn on JavaScript to see the menu, or chat with us on WhatsApp: +234 913 215 5228.</p></noscript>
+</div>
+
+<section class="catering" id="catering" aria-labelledby="cat-h">
+ <div class="wrap">
+  <div class="cat-copy">
+   <p class="eyebrow">Catering and events</p>
+   <h2 id="cat-h">Feeding a crowd? We've got the trays.</h2>
+   <p>Birthdays, office lunches, owambes and gifts. Custom food trays, small chops packs and event packs, made fresh and packed the way you want.</p>
+   <ul class="ticks"><li><svg class="i"><use href="#i-check"/></svg><span>Custom trays from <b id="tray-from">₦60,000</b></span></li><li><svg class="i"><use href="#i-check"/></svg>Small chops packs, or by the piece</li><li><svg class="i"><use href="#i-check"/></svg>Event pricing for large orders</li></ul>
+   <div class="btns"><button type="button" class="btn or" data-open="food-tray"><svg class="i"><use href="#i-plus"/></svg>Build a food tray</button><a class="btn line" id="event-ask" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>Plan an event with us</a></div>
+  </div>
+  <div class="cat-media"><img src="assets/web/FOOD_TRAY-1200.jpg?v=3" alt="A food tray packed with small chops, jollof rice, fried rice, spaghetti, waffles and fried chicken" loading="lazy" width="864" height="1080"><img class="m2" src="assets/web/ONLY_FOR_EVENT_-600.jpg?v=3" alt="Twzee Foods small chops poster: rows of event packs with puff puff and samosa" loading="lazy" width="600" height="480"></div>
+ </div>
+</section>
+
+<section class="story" id="story" aria-labelledby="story-h">
+ <div class="wrap">
   <div class="hv"><figure class="vid">
-   <video id="vid" muted autoplay loop playsinline preload="metadata" poster="assets/images/HERO_PAGE.jpeg" aria-label="Twzee Foods video: granola being baked and poured, chicken prep and a loaf being enjoyed">
+   <video id="vid" muted loop playsinline preload="none" poster="assets/web/HERO_PAGE-1200.jpg?v=3" aria-label="Twzee Foods video: granola being baked and poured, chicken prep and a loaf being enjoyed">
     <source src="assets/video/intro.mp4" type="video/mp4">
    </video>
    <button type="button" class="bigplay" aria-label="Play video"></button>
    <div class="vc"><button type="button" id="pp" aria-label="Pause video">Pause</button><button type="button" id="snd" aria-pressed="false" aria-label="Turn sound on">Sound off</button></div>
   </figure><div class="sticker" aria-hidden="true">One bite &amp; you're hooked.</div></div>
- </div>
-</section>
-<div class="strip"><ul class="wrap">
- <li id="strip-hours"><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><span><b>Made fresh</b><small>Real ingredients, made to order</small></span></li>
- <li><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><span><b><span data-money="fee">₦1,500</span> delivery</b><small>Flat fee <span data-within>within Enugu</span></small></span></li>
- <li><span class="ic"><svg class="i"><use href="#i-gift"/></svg></span><span><b>Free delivery</b><small>On orders from <span data-money="freeOver">₦25,000</span></small></span></li>
- <li><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><span><b>Free pickup</b><small>Collect it yourself, any order</small></span></li>
-</ul></div>
-<div class="layers" role="presentation"></div>
-
-<div id="menu">
- <nav class="chips" id="chips" aria-label="Menu categories"><a href="#parfait">Parfait</a><a href="#yoghurt">Greek Yoghurt</a><a href="#granola">Granola</a><a href="#shawarma">Shawarma &amp; Bites</a><a href="#drinks">Drinks</a><a href="#salads">Salads</a><a href="#chops">Small Chops</a><a href="#trays">Food Trays</a></nav>
- <!-- Menu sections are rendered from js/menu-data.js -->
-</div>
-
-<section class="trays" id="trays">
- <div class="wrap">
-  <div class="in">
-   <p class="eyebrow">For parties and gifts</p>
-   <h2>Food trays, made your way</h2>
-   <p class="price" id="tray-price">₦60,000</p>
-   <p>Small chops, rice, pasta, waffles and chicken, packed the way you want. Add a tray, then tell us what you'd like on it in the order notes.</p>
-   <div class="btns"><button type="button" class="btn or" id="tray-add" data-add data-n="Food Tray (custom)" data-p="60000"><svg class="i"><use href="#i-plus"/></svg>Add a tray to my order</button><a class="btn line" id="tray-ask" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>Ask a question</a></div>
+  <div class="story-copy">
+   <p class="eyebrow">Our kitchen</p>
+   <h2 id="story-h">Real food, made fresh every day.</h2>
+   <p>Twzee Foods makes healthy food that still tastes like a treat: creamy parfaits, our own ROC granola, fresh juices, colourful salads and hearty shawarma.</p>
+   <ul class="values">
+    <li><span class="ic"><svg class="i"><use href="#i-leaf"/></svg></span><span><b>Fresh ingredients</b><small>Fruit, vegetables and proteins, freshly prepared.</small></span></li>
+    <li><span class="ic"><svg class="i"><use href="#i-chef"/></svg></span><span><b>Made to order</b><small>Prepared for you when you order.</small></span></li>
+    <li><span class="ic"><svg class="i"><use href="#i-heart"/></svg></span><span><b>Proudly Nigerian</b><small>A home-grown brand from <span data-town>Enugu</span>.</small></span></li>
+   </ul>
   </div>
-  <div class="ph tall"><img src="assets/images/FOOD_TRAY.jpeg" alt="A food tray packed with small chops, jollof rice, fried rice, spaghetti, waffles and fried chicken" style="object-position:50% 45%" loading="lazy"></div>
  </div>
 </section>
 
-<section class="delivery" id="delivery">
+<section class="how" id="how" aria-labelledby="how-h">
+ <div class="wrap">
+  <p class="eyebrow">How ordering works</p>
+  <h2 id="how-h">Order in three steps</h2>
+  <ol class="steps">
+   <li><h3>Build your order</h3><p>Tap any item to see it in full, choose a size or option, and add it. Your total updates as you go.</p></li>
+   <li><h3>Add your details</h3><p>Choose delivery or pickup, add your name, address and any notes, like what goes on your tray.</p></li>
+   <li><h3>Send it to us</h3><p>Your order opens in WhatsApp, already written out. Press send, and we confirm the total and timing with you.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="delivery" id="delivery" aria-labelledby="del-h">
  <div class="wrap">
   <p class="eyebrow">Delivery and pickup</p>
-  <h2>Simple, fair delivery</h2>
+  <h2 id="del-h">Simple, fair delivery</h2>
   <div class="dcards">
-   <div class="dc"><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><strong data-money="fee">₦1,500</strong><span>Flat delivery <span data-within>within Enugu</span>, on every order placed on this website.</span></div>
+   <div class="dc"><span class="ic"><svg class="i"><use href="#i-truck"/></svg></span><strong data-money="fee">₦1,500</strong><span>Flat delivery <span data-within>within town</span>, on every order placed on this website.</span></div>
    <div class="dc hl"><span class="ic"><svg class="i"><use href="#i-gift"/></svg></span><strong>Free</strong><span>Delivery when your items total <span data-money="freeOver">₦25,000</span> or more.</span></div>
    <div class="dc"><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><strong>₦0</strong><span>Collect your order yourself. Choose Pickup when you check out.</span></div>
   </div>
@@ -130,55 +186,77 @@ show()},400)})})();
  </div>
 </section>
 
-<section class="how" id="how">
+<section class="faq" id="faq" aria-labelledby="faq-h">
  <div class="wrap">
-  <p class="eyebrow">How it works</p>
-  <h2>Order in three steps</h2>
-  <ol class="steps">
-   <li><h3>Build your order</h3><p>Tap Add on anything you like. Your order and total update at the bottom of the screen.</p></li>
-   <li><h3>Add your details</h3><p>Choose delivery or pickup, add your name, address and any notes, like what goes on your tray.</p></li>
-   <li><h3>Send it to us</h3><p>Your order opens in WhatsApp, already written out. Press send, and we confirm the total and timing with you.</p></li>
-  </ol>
+  <div class="faq-head"><p class="eyebrow">Questions</p><h2 id="faq-h">Good to know</h2><p>Can't find your answer? <a data-wa="Hello Twzee Foods! I have a question:" href="https://wa.me/2349132155228" target="_blank" rel="noopener">Chat with us</a>.</p></div>
+  <div class="faq-list">
+   <details><summary>How do I place an order?</summary><p>Add items from the menu, open your order, choose delivery or pickup and add your details. Press Send my order and your order opens in WhatsApp, already written out. Press send there and we confirm it with you.</p></details>
+   <details><summary>How do I pay?</summary><p>No payment is taken on this website. When we confirm your order on WhatsApp, we tell you the final amount and how to pay.</p></details>
+   <details><summary>Where do you deliver, and how much is it?</summary><p>We deliver <span data-within>within town</span> for a flat <span data-money="fee">₦1,500</span>. Delivery is free when your items total <span data-money="freeOver">₦25,000</span> or more, and pickup is always free.</p></details>
+   <details><summary>When are you open?</summary><p id="faq-hours">See our opening hours in the Delivery section. You can send an order at any time, and we confirm it when we open.</p></details>
+   <details><summary>Can you cater for my event?</summary><p>Yes. Build a custom food tray from the menu, or chat with us for event packs and pricing for large orders.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-h">
+ <div class="wrap">
+  <p class="eyebrow">Official channels</p>
+  <h2 id="contact-h">Talk to Twzee Foods</h2>
+  <div class="ccards">
+   <a class="cc" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-chat"/></svg></span><span><small>WhatsApp</small><b data-wa-show>+234 913 215 5228</b><em>Chat with us<svg class="i"><use href="#i-arrow"/></svg></em></span></a>
+   <a class="cc" data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-insta"/></svg></span><span><small>Instagram</small><b data-ig-show>@twzee_foods</b><em>Follow us<svg class="i"><use href="#i-arrow"/></svg></em></span></a>
+   <div class="cc"><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><span><small>Opening hours</small><b data-hours-text>Mon to Sat, 8am to 6pm</b><em class="status" data-status hidden><i class="dot"></i><span></span></em></span></div>
+   <div class="cc"><span class="ic"><svg class="i"><use href="#i-pin"/></svg></span><span><small>Delivery area</small><b><span data-town>Enugu</span></b><em><span data-info-address>Free pickup on every order</span></em></span></div>
+  </div>
+  <p class="official"><svg class="i"><use href="#i-shield"/></svg>These are the official Twzee Foods channels. Orders placed on this website are always sent to the WhatsApp number above.</p>
  </div>
 </section>
 </main>
 
-<footer id="contact">
+<footer>
  <div class="layers" role="presentation"></div>
  <div class="wrap fgrid">
   <div class="fbrand">
    <img class="flogo" src="assets/logo.png" alt="Twzee Foods: one bite and you're hooked" width="720" height="611" loading="lazy">
-   <p>Healthy food, made fresh to order. Parfaits, salads, shawarma, small chops and trays.</p>
+   <p>Healthy food, made fresh to order in <span data-town>Enugu</span>.</p>
+   <div class="social"><a class="ib" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener" aria-label="Chat with Twzee Foods on WhatsApp"><svg class="i"><use href="#i-chat"/></svg></a><a class="ib" data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener" aria-label="Twzee Foods on Instagram"><svg class="i"><use href="#i-insta"/></svg></a></div>
   </div>
   <div class="fcol">
    <h3>Get in touch</h3>
    <ul class="flinks">
-    <li><a data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg>Chat with us</a></li>
-    <li><a data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener"><svg class="i"><use href="#i-insta"/></svg>@twzee_foods</a></li>
+    <li><a data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener"><svg class="i"><use href="#i-chat"/></svg><span data-wa-show>+234 913 215 5228</span></a></li>
+    <li><a data-ig href="https://www.instagram.com/twzee_foods/" target="_blank" rel="noopener"><svg class="i"><use href="#i-insta"/></svg><span data-ig-show>@twzee_foods</span></a></li>
     <li data-info="phone" hidden><a href="#"><svg class="i"><use href="#i-phone"/></svg><span></span></a></li>
    </ul>
   </div>
   <div class="fcol">
-   <h3>Delivery</h3>
+   <h3>Visit and delivery</h3>
    <ul class="flinks plain">
-    <li><svg class="i"><use href="#i-truck"/></svg><span><span data-money="fee">₦1,500</span> flat, <span data-within>within Enugu</span></span></li>
-    <li><svg class="i"><use href="#i-gift"/></svg><span>Free from <span data-money="freeOver">₦25,000</span></span></li>
-    <li><svg class="i"><use href="#i-store"/></svg><span>Pickup is always free</span></li>
     <li data-info="hours" hidden><svg class="i"><use href="#i-clock"/></svg><span></span></li>
+    <li><svg class="i"><use href="#i-truck"/></svg><span><span data-money="fee">₦1,500</span> flat, <span data-within>within town</span></span></li>
+    <li><svg class="i"><use href="#i-gift"/></svg><span>Free from <span data-money="freeOver">₦25,000</span></span></li>
     <li data-info="address" hidden><svg class="i"><use href="#i-pin"/></svg><span></span></li>
    </ul>
   </div>
   <div class="fcol">
    <h3>Menu</h3>
-   <ul class="fmenu"><li><a href="#parfait">Parfait</a></li><li><a href="#yoghurt">Greek Yoghurt</a></li><li><a href="#granola">Granola</a></li><li><a href="#shawarma">Shawarma</a></li><li><a href="#drinks">Drinks</a></li><li><a href="#salads">Salads</a></li><li><a href="#chops">Small Chops</a></li><li><a href="#trays">Food Trays</a></li></ul>
+   <ul class="fmenu" id="fmenu"></ul>
   </div>
  </div>
- <div class="wrap fbot"><small>© 2026 Twzee Foods</small><a href="#top">Back to top</a></div>
+ <div class="wrap fbot"><small>© 2026 Twzee Foods. Prices in naira and subject to confirmation.</small><a href="#top">Back to top</a></div>
 </footer>
 
-<a class="fab" data-wa="Hello Twzee Foods!" href="https://wa.me/2349132155228" target="_blank" rel="noopener" aria-label="Chat with us"><svg class="i"><use href="#i-chat"/></svg></a>
 <button type="button" class="bar" id="bar" hidden></button>
 <p class="sr" id="live" aria-live="polite"></p>
+
+<!-- PRODUCT VIEW: filled in by js/main.js when a product is opened -->
+<dialog id="pd" class="pd" aria-labelledby="pd-n">
+ <button type="button" class="ib pd-x" id="pd-x" aria-label="Close"><svg class="i"><use href="#i-close"/></svg></button>
+ <div class="pd-media" id="pd-media"></div>
+ <div class="pd-body" id="pd-body"></div>
+ <div class="pd-buy" id="pd-buy"></div>
+</dialog>
 
 <dialog id="dlg" aria-labelledby="dt">
  <div class="dh"><h2 id="dt">Your order</h2><button type="button" id="close" class="ib" aria-label="Close your order"><svg class="i"><use href="#i-close"/></svg></button></div>
@@ -187,7 +265,7 @@ show()},400)})})();
   <div class="empty" id="empty" hidden><span class="ic"><svg class="i"><use href="#i-bag"/></svg></span><p><b>Your order is empty</b><br>Add something tasty from the menu.</p><a class="btn sm" href="#menu" id="browse">Browse the menu</a></div>
   <div id="checkout">
    <fieldset class="fulfil"><legend>How would you like it?</legend>
-    <label class="opt"><input type="radio" name="fulfil" value="delivery" checked><span><svg class="i"><use href="#i-truck"/></svg><b>Delivery</b><small id="d-note">₦1,500 flat, within Enugu</small></span></label>
+    <label class="opt"><input type="radio" name="fulfil" value="delivery" checked><span><svg class="i"><use href="#i-truck"/></svg><b>Delivery</b><small id="d-note">₦1,500 flat, within town</small></span></label>
     <label class="opt"><input type="radio" name="fulfil" value="pickup"><span><svg class="i"><use href="#i-store"/></svg><b>Pickup</b><small>No delivery fee</small></span></label>
    </fieldset>
    <div class="prog" id="prog"><p class="nudge" id="nudge"></p><div class="track"><i id="pbar"></i></div></div>
@@ -210,7 +288,7 @@ show()},400)})})();
   <div class="sent" id="sent" hidden><p><svg class="i"><use href="#i-check"/></svg><span><b>Almost done.</b> Press send in WhatsApp and we'll confirm your order.</span></p><button type="button" class="linkbtn" id="fresh">Start a new order</button></div>
  </div>
 </dialog>
-<script src="js/menu-data.js?v=8"></script>
-<script src="js/main.js?v=7"></script>
+<script src="js/menu-data.js?v=14"></script>
+<script src="js/main.js?v=12"></script>
 </body>
 </html>
